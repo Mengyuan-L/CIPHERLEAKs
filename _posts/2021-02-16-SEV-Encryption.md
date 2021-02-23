@@ -3,7 +3,7 @@ layout: post
 title:  "SEV Memory Encryption"
 author: mengyuan
 categories: [ Jekyll, tutorial ]
-image: assets/images/16.jpg
+image: assets/images/mycat7.jpeg
 ---
 There are lots of powerful things you can do with the Markdown editor. If you've gotten pretty comfortable with writing in Markdown, then you may enjoy some more advanced tips about the types of things you can do with Markdown!
 

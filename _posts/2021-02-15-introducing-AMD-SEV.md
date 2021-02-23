@@ -4,7 +4,7 @@ title:  "Introducing AMD SEV"
 author: john
 categories: [ Background, SEV ]
 tags: [red, yellow]
-image: assets/images/11.jpg
+image: assets/images/mycat10.jpeg
 description: "My review of Inception movie. Acting, plot and something else in this short description."
 featured: true
 hidden: true
