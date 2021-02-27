@@ -11,6 +11,7 @@ baseurl: /SEV_security_blog
 include: ["_pages"]
 permalink: /:title/
 email: li.7533@osu.edu
+theme: jekyll-uikit
 
 # Authors
 authors:
@@ -25,12 +26,14 @@ authors:
 
 # Plugins
 plugins:
+  - github-pages
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-archives
-    
+  - jekyll-algolia
+
 # Archives
 jekyll-archives:
   enabled:
@@ -61,4 +64,4 @@ adsense-data-ad-slot: "1363087678"
 # Lazy Images ("enabled" or "disabled")
 lazyimages: "disabled"
 
-exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
+exclude: [vendor, changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]

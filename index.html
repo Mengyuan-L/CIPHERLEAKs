@@ -2,14 +2,114 @@
 layout: default
 title: Home
 ---
-
 {% if page.url == "/" %}
+
+<link rel="stylesheet" href="{{ "/assets/css/uikit.min.css" | relative_url }}">
+  <script type="text/javascript" src="{{ "/assets/js/uikit.min.js " | relative_url }}"></script>
+  <script type="text/javascript" src="{{ "/assets/js/uikit-icons.min.js " | relative_url }}"></script>
+
+
+<section class="introductions">
+    <h2>What is AMD SEV?</h2>
+    <p>
+    Secure Encrypted Virtualization (SEV) is an emerging processor feature available in recent AMD processors that encrypts the entire memory of virtual machines (VM) transparently. Memory encryption is performed by a hardware memory encryption engine (MEE) embedded in the memory controller that encrypts memory traffic on the fly, with a key unique to each of the VMs. As the encryption keys are generated from random sources at the time of VM launches and are securely protected inside the secure processor in their lifetime, privileged software, including the hypervisor, is not able to extract the keys and use them to decrypt the VMs' memory content. Therefore, SEV enables a stronger threat model, where the hypervisor is removed from the trusted computing base (TCB). Hence, SEV provides a trusted execution environment (TEE) for (mostly) <strong>unmodified</strong> VMs to perform <strong>confidential computation</strong> that is shielded from strong adversaries that control the entire privileged software stack. 
+    </p>
+
+
+  <!-- UiKit Javascript -->
+<!--   <div class="uk-section uk-align-center"> -->
+    <div class="uk-container uk-container-small">
+        <div class="uk-child-width-1-2@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid="">   
+            <div>
+                <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large uk-border-rounded">
+                    <a class="uk-position-cover" href="/SEV_security_blog/setupYourSEV"></a>
+                    <div class="uk-card-badge uk-label">Docs</div>
+                    <h3 class="uk-card-title uk-margin">What's new?</h3>
+                    <p>Read more blogs and state-of-art researches.</p>
+                    
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large uk-border-rounded">
+                    <a class="uk-position-cover" href="/SEV_security_blog/setupYourSEV"></a>
+                    <div class="uk-card-badge uk-label">Code</div>
+                    <h3 class="uk-card-title uk-margin">Play with SEV VM</h3>
+                    <p>Setting up your first SEV VM.</p>
+                    
+                </div>
+            </div>
+    </div>
+<!-- </div> -->
+
+</section>
+
+
+<br />
+<br />
+
+<div>
+    <h2>Essential Links</h2>
+    <h3>Documents</h3>
+        <ul>
+            <li>
+                <strong>[SEV]</strong> <a href="https://developer.amd.com/wordpress/media/2013/12/AMD_Memory_Encryption_Whitepaper_v7-Public.pdf">AMD Memory Encryption</a>
+                    <ul>
+                        <li><a href="https://www.amd.com/system/files/TechDocs/55766_SEV-KM_API_Specification.pdf">SEV API</a></li>
+                    </ul>
+            </li>
+
+            <li>
+                <strong>[SEV-ES]</strong>  <a href="https://www.amd.com/system/files/TechDocs/Protecting%20VM%20Register%20State%20with%20SEV-ES.pdf">Protecting VM Register State With SEV-ES</a>
+                    <ul>
+                        <li><a href="https://www.amd.com/system/files/TechDocs/55766_SEV-KM_API_Specification.pdf">SEV-ES API</a></li>
+                        <li><a href="https://developer.amd.com/wp-content/resources/56421.pdf">Guest Hypervisor Communication Block (GHCB) Standardization</a></li>
+                    </ul>
+            </li>
+
+            <li>
+                <strong>[SEV-SNP]</strong> <a href="https://www.amd.com/system/files/TechDocs/SEV-SNP-strengthening-vm-isolation-with-integrity-protection-and-more.pdf">AMD SEV-SNP</a>
+                    <ul>
+                        <li><a href="https://www.amd.com/system/files/TechDocs/56860.pdf">SEV Secure Nested Paging Firmware ABI Specification</a></li>
+                    </ul>
+            </li>
+
+            <li>
+                <strong>[Manual]</strong> <a href="https://www.amd.com/system/files/TechDocs/24593.pdf">AMD64 Architecture Programmer’s Manual Volume 2</a>
+            </li>
+
+        </ul>
+
+    <h3>Source Code</h3>
+        <ul>
+            <li>
+                <strong>[Software Support]</strong> <a href="https://github.com/AMDESE/AMDSEV">How to setup AMD SEV</a>
+                    <ul>
+                        <li><a href="https://github.com/AMDESE/AMDSEV/tree/sev-es">SEV-ES Branch</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="https://github.com/AMDESE/AMDSEV/tree/sev-snp-devel">SEV-SNP Branch</a></li>
+                    </ul>
+            </li>
+
+            <li>
+                <strong>[SEV-Tool]</strong>  <a href="https://github.com/AMDESE/sev-tool"> AMD SEV Tool for managing SEV platform certificates</a>
+            </li>
+
+            <li>
+                <strong>[Container]</strong>  <a href="https://github.com/AMDESE/runtime">SEV runtime for Kata Containers</a>
+            </li>
+        </ul>
+    </p> 
+</div>
+
+<br />
+<br />
 
 <!-- Featured
 ================================================== -->
 <section class="featured-posts">
     <div class="section-title">
-        <h2><span>Featured</span></h2>
+        <h2><span>Featured Blogs</span></h2>
     </div>
     <div class="row">
 
@@ -34,7 +134,7 @@ title: Home
 
     <div class="section-title">
 
-        <h2><span>All Stories</span></h2>
+        <h2><span>All Blogs</span></h2>
 
     </div>
 
