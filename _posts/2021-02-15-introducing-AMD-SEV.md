@@ -4,7 +4,7 @@ title:  "Introducing AMD SEV"
 author: Mengyuan
 categories: [ SEV, Background ]
 tags: [red, yellow]
-image: assets/images/mycat.jpeg
+image: assets/images/parties.png
 description: "A brief introduction to SEV's design goal, threat model, and some links for SEV official websites."
 featured: true
 hidden: true

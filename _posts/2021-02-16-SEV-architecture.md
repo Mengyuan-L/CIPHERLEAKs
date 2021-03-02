@@ -3,7 +3,7 @@ layout: post
 title:  "SEV Architecture"
 author: mengyuan
 categories: [ SEV, Introduction ]
-image: assets/images/mycat.jpeg
+image: assets/images/cloud.png
 featured: true
 hidden: true
 ---
