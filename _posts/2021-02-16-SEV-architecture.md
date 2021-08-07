@@ -16,14 +16,14 @@ hidden: true
 
 [SEV system-on-chip (Secure Processor)]({{ site.baseurl }}/SEV-SOC)
 
-[XEX Encryption ]({{ site.baseurl }}/SEV-SOC)
+[XEX Encryption ]({{ site.baseurl }}/SEV-Encryption)
 
-[Nested Page Table]({{ site.baseurl }}/SEV-SOC)
+[Nested Page Table]({{ site.baseurl }}/SEV-PT)
 
 [ IO ]({{ site.baseurl }}/SEV-IO)
 
-[Attestation]({{ site.baseurl }}/SEV-SOC)
+<!-- [Attestation]({{ site.baseurl }}/SEV-SOC) -->
 
 [Address Space ID (ASID)]({{ site.baseurl }}/SEV-ASID)
 
-[Reverse Map Table (RMP)]({{ site.baseurl }}/SEV-SOC)
+[Reverse Map Table (RMP)]({{ site.baseurl }}/SEV-RMP)

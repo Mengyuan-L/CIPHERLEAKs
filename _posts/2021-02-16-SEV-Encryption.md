@@ -5,100 +5,32 @@ author: mengyuan
 categories: [ Jekyll, tutorial ]
 image: assets/images/xex.png
 ---
-There are lots of powerful things you can do with the Markdown editor. If you've gotten pretty comfortable with writing in Markdown, then you may enjoy some more advanced tips about the types of things you can do with Markdown!
+# XEX Encryption
 
-As with the last post about the editor, you'll want to be actually editing this post as you read it so that you can see all the Markdown code we're using.
+SEV hardware encrypts the VM's memory using 128-bit AES symmetric encryption. The AES engine integrated into the AMD System-on-Chip (SOC) automatically encrypts the data when it is written to the memory and automatically decrypts the data when it is read from memo
 
+![encryption_1]({{ site.baseurl }}/assets/images/encryption_1.png)
 
-## Special formatting
+For SEV, the AES encryption uses the XOR-and-Encrypt encryption mode[1](shown in figure a), which is later changed to an XEX mode encryption (shown in figure b).
 
-As well as bold and italics, you can also use some other special formatting in Markdown when the need arises, for example:
+![encryption_2]({{ site.baseurl }}/assets/images/encryption_2.png)
 
-+ ~~strike through~~
-+ ==highlight==
-+ \*escaped characters\*
+Thus, each aligned 16-byte memory block is encrypted independently. SEV utilizes a physical address-based tweak function T() to prevent the attacker from directly inferring plaintext by comparing 16-byte ciphertext[2]. It adopts a basic Xor-and-Encrypt (XE) mode on the first generation of EPYC processors (e.g., EPYC 7251). The ciphertext *c* is calculated by XORing the plaintext *m* with the tweak function for system physical address $P_m$ using 
 
+$$c = ENC(m \oplus T(P_{m}))$$
 
-## Writing code blocks
+where the encryption key is called VM encryption key ($K_{vek}$). This basic XE encryption mode can be easily reverse-engineered by the adversary as the tweak function vectors $t_i$s are fixed. AMD then replaces the XE mode encryption with the XOR-Encrypt-XOR (XEX) mode in EPYC 7401P processors where the ciphertext is calculated by 
 
-There are two types of code elements which can be inserted in Markdown, the first is inline, and the other is block. Inline code is formatted by wrapping any word or words in back-ticks, `like this`. Larger snippets of code can be displayed across multiple lines using triple back ticks:
+$$c = ENC(m \oplus T(P_{m}))\oplus T(P_{m})$$
 
-```
-.my-link {
-    text-decoration: underline;
-}
-```
+The tweak function vectors  $t_i$s are proved to have only 32-bit entropy by Wilke et al.[3] at first, which allows an adversary to reverse engineer the tweak function vectors. AMD adopted a 128-bit entropy tweak function vectors in their Zen 2 architecture EPYC processors from July 2019[4] and thus fixed all existing vulnerabilities in SEV AES encryption. However, the same plaintext always has the same ciphertext in system physical address $P_m$ during the lifetime of a guest VM.
 
-#### HTML
+## Reference
 
-```html
-<li class="ml-1 mr-1">
-    <a target="_blank" href="#">
-    <i class="fab fa-twitter"></i>
-    </a>
-</li>
-```
+[1]Du, Zhao-Hui, Zhiwei Ying, Zhenke Ma, Yufei Mai, Phoebe Wang, Jesse Liu, and Jesse Fang. "Secure encrypted virtualization is unsecure." arXiv preprint arXiv:1712.05090 (2017). 
 
-#### CSS
+[2]Kaplan, David, Jeremy Powell, and Tom Woller. "AMD memory encryption." White paper (2016).
 
-```css
-.highlight .c {
-    color: #999988;
-    font-style: italic; 
-}
-.highlight .err {
-    color: #a61717;
-    background-color: #e3d2d2; 
-}
-```
+[3] Wilke, Luca, Jan Wichelmann, Mathias Morbitzer, and Thomas Eisenbarth. "SEVurity: No Security Without Integrity: Breaking Integrity-Free Memory Encryption with Minimal Assumptions." In 2020 IEEE Symposium on Security and Privacy (SP), pp. 1483-1496. IEEE, 2020.
 
-#### JS
-
-```js
-// alertbar later
-$(document).scroll(function () {
-    var y = $(this).scrollTop();
-    if (y > 280) {
-        $('.alertbar').fadeIn();
-    } else {
-        $('.alertbar').fadeOut();
-    }
-});
-```
-
-#### Python
-
-```python
-print("Hello World")
-```
-
-#### Ruby
-
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
-
-#### C
-
-```c
-printf("Hello World");
-```
-
-
-
-
-![walking]({{ site.baseurl }}/assets/images/8.jpg)
-
-## Reference lists
-
-The quick brown jumped over the lazy.
-
-Another way to insert links in markdown is using reference lists. You might want to use this style of linking to cite reference material in a Wikipedia-style. All of the links are listed at the end of the document, so you can maintain full separation between content and its source or reference.
-
-## Full HTML
-
-Perhaps the best part of Markdown is that you're never limited to just Markdown. You can write HTML directly in the Markdown editor and it will just work as HTML usually does. No limits! Here's a standard YouTube embed code as an example:
-
-<p><iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
+[4]Suggs, David, Mahesh Subramony, and Dan Bouvier. "The AMD “Zen 2” Processor." IEEE Micro 40, no. 2 (2020): 45-52.
