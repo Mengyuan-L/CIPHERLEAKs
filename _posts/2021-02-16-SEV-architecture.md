@@ -8,10 +8,22 @@ featured: true
 hidden: true
 ---
 
-my first post about sev.
+# SEV Architecture
 
-#### So how do we do spoilers?
+## Overview
 
-```html
-<span class="spoiler">My hidden paragraph here.</span>
-```
+- This section introduces several  hardware components and key words related to AMD SEV.
+
+[SEV system-on-chip (Secure Processor)]({{ site.baseurl }}/SEV-SOC)
+
+[XEX Encryption ]({{ site.baseurl }}/SEV-SOC)
+
+[Nested Page Table]({{ site.baseurl }}/SEV-SOC)
+
+[ IO ]({{ site.baseurl }}/SEV-IO)
+
+[Attestation]({{ site.baseurl }}/SEV-SOC)
+
+[Address Space ID (ASID)]({{ site.baseurl }}/SEV-ASID)
+
+[Reverse Map Table (RMP)]({{ site.baseurl }}/SEV-SOC)
