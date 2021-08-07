@@ -8,10 +8,4 @@ featured: true
 hidden: true
 ---
 
-my first post about sev.
-
-#### So how do we do spoilers?
-
-```html
-<span class="spoiler">My hidden paragraph here.</span>
-```
+To be publish
