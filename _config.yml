@@ -1,7 +1,7 @@
 # Site
-name: "SEV Security Blog"
-title: "SEV Security Blog"
-description: "A website introducing AMD SEV and its state-of-art researches."
+name: "CIPHERLEAKs"
+title: "CIPHERLEAKs: Ciphertext Side Channels on AMD SEV"
+description: "Cipherleaks is the first demonstrated attack against <strong>AMD SEV-SNP</strong>. It exploits a vulnerable design feature of SEV's memory encryption and uses the ciphertext of the encrypted VM Save Area (VMSA) as side channels to breach <strong>constant-time</strong> RSA and ECDSA implementation of the latest OpenSSL library."
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: /CIPHERLEAKs
@@ -41,10 +41,10 @@ jekyll-archives:
   layout: archive
   permalinks:
     category: '/category/:name/'
-    
+port: 1234    
 # Pagination 
-paginate: 6
-paginate_path: /page:num/
+# paginate: 6
+# paginate_path: /page:num/
     
 # Other
 markdown: kramdown
