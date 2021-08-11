@@ -14,24 +14,25 @@ title: Home
 <section class="introductions">
     <!-- <nav style="background-color:black;"> -->
     <div class="section-title">
-        <h2><span>What is CIPHERLEAKs?</span> <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:5%"/> </h2>
+        <h2><span>What is CIPHERLEAKs?</span> <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:3%"/> </h2>
     </div>
-  <div class="row listrecent col-sm-12 col-md-6 mt-3 mt-md-0">
+    <!-- </nav> -->
+      <div class="listrecent col-sm-12 col-md-6 mt-3 mt-md-0">
     <div class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Gsv8QJbXU90" allowfullscreen></iframe>
     </div>
   </div>
-  <br />
-<br />
-    <!-- </nav> -->
 </section>
 
+
+  <br />
+<br />
 <!-- Featured
 ================================================== -->
 <section class="featured-posts">
     <!-- <nav style="background-color:white;"> -->
     <div class="section-title">
-        <h2> <span>Root causes of the vulnerability</span>  <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:5%"/></h2>
+        <h2> <span>Root causes of the vulnerability</span>  <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:3%"/></h2>
     </div>
     <div class="row">
 <p style="padding-left: 1em;">
@@ -48,7 +49,7 @@ title: Home
 <section class="featured-posts">
     <!-- <nav style="background-color:black;"> -->
     <div class="section-title">
-        <h2><span>Ciphertext side channels</span> <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:5%"/> </h2>
+        <h2><span>Ciphertext side channels</span> <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:3%"/> </h2>
     </div>
     <div class="row">
 <p style="padding-left: 1em;"><span style="border-bottom:0.05em solid"><i>By monitoring the changes in the ciphertext of the victim VM, the adversary is able to infer the changes of the corresponding plaintext</i></span>. This ciphertext side channel may seem innocuous at first glance, but when applied to certain encrypted memory regions, it may be exploited to infer the execution of the victim VM. Specifically, we target at monitoring the ciphertext of the <b>VMSA</b>. We particularly construct two attack primitives: <b>execution state inference</b> and <b>plaintext recovery</b>.  Execution state inference can help locate the physical address of targeted functions and infer the executing function of a process. The ciphertext side channel can also be exploited to recover the plaintext from some of the ciphertext blocks. To recover plaintext from the ciphertext, the adversary first needs to build a dictionary of plaintext-ciphertext pairs for the targeted registers, and then make use of the dictionary to recover the plaintext value of the registers of interest during the execution of a sensitive application.</p>
@@ -61,7 +62,7 @@ title: Home
 <section class="featured-posts">
     <!-- <nav style="background-color:white;"> -->
     <div class="section-title">
-        <h2><span>Case studies</span> <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:5%"/> </h2>
+        <h2><span>Case studies</span> <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:3%"/> </h2>
     </div>
     <div class="row">
 <p style="padding-left: 1em;">We present two case studies to illustrate the CIPHERLEAKs attack. In the first attack, we show that the <b>constant-time RSA</b> implementation in OpenSSL can be broken with known ciphertext for the plaintext values of 0 to 31 (which can be easily collected during VM&#x27;s lifecycle). In the second attack, we show that the <b>constant-time ECDSA</b> signature can be compromised with known ciphertext of the plaintext values of 0 and 1. In both of the two cases we presented, the adversary can recover the private key <i>d</i> of RSA encryption and the secret nonce <i>k</i> in ECDSA signature with <b>100%</b> accuracy.</p>
@@ -74,7 +75,7 @@ title: Home
 <section class="featured-posts">
     <!-- <nav style="background-color:black;"> -->
     <div class="section-title">
-        <h2><span>Disclosure</span> <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:5%"/> </h2>
+        <h2><span>Disclosure</span> <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:3%"/> </h2>
     </div>
     <div class="row">
 <p style="padding-left: 1em;">We disclosed the vulnerability of the ciphertext side channel and the CIPHERLEAKs attack to AMD team. AMD engineers have acknowledged the vulnerability on SEV, SEV-ES, and SEV-SNP, and filed an embargo that is effective until August 10, 2021. As of the time of writing, CVE number, <b>CVE-2020-12966</b>, has been reserved for the vulnerability. AMD also announces a security bulletin together with a hardware patch for SEV-SNP in August 2021 (<a href="https://www.amd.com/en/corporate/product-security/bulletin/amd-sb-1013">https://www.amd.com/en/corporate/product-security/bulletin/amd-sb-1013</a>).</p>
@@ -92,7 +93,7 @@ title: Home
   <!-- UiKit Javascript -->
 <!--   <div class="uk-section uk-align-center"> -->
     <div>
-        <h2>Research Paper <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:5%"/> </h2>
+        <h2>Research Paper <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:3%"/> </h2>
     <div class="uk-container uk-container-small">
         <div class="uk-child-width-1-2@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid="">   
             <div>
@@ -123,7 +124,7 @@ title: Home
 ================================================== -->
 <section class="featured-posts">
     <div class="section-title">
-        <h2><span>People</span> <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:5%"/> </h2>
+        <h2><span>People</span> <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:3%"/> </h2>
     </div>
     <div>
 <p id="05f89406-1c2f-428c-aeb5-293af2a916a7" class=""><a href="http://web.cse.ohio-state.edu/~li.7533/">Mengyuan Li (The Ohio State University)</a></p>
@@ -138,7 +139,7 @@ title: Home
 ================================================== -->
 <section class="featured-posts">
     <div class="section-title">
-        <h2><span>Q&amp;A</span> <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:5%"/> </h2>
+        <h2><span>Q&amp;A</span> <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:3%"/> </h2>
     </div>
     <div>
 <ul id="1f6ed9f4-2b2f-4fdd-866b-c09ce5f72459" class="toggle"><li><details><summary><big><b>Who is affected by CIPHERLEAKs?</b></big></summary><p id="bfe9992a-feba-4e25-ba61-bb3225fe91dd" class="">All SEV, SEV-ES and SEV-SNP are affected by CIPHERLEAKs, which are supported by AMD EPYC server processors. </p></details></li></ul><ul id="c7d33be0-f483-482a-8cbd-1cdc4fd5ebad" class="toggle"><li><details><summary><big><b>What is SEV?</b></big></summary><p id="bc7dcc8b-8ba9-4d98-8d52-6d801a6111fb" class="">AMD’s Secure Encrypted Virtualization (SEV) is an extension of the AMD Virtualization (AMD-V) technology. It provides security features, such as memory encryption and isolation to virtual machines (VM), in order to support scenarios like confidential cloud computing where hypervisors are not trusted to respect the security of the VMs. When SEV is enabled, the memory pages used by a guest VM are transparently encrypted by a secure co-processor using an ephemeral key that is unique to each VM, thus allowing the guest VMs to compute on encrypted memory. SEV is AMD&#x27;s ambitious movement towards confidential cloud computing, which is gaining traction in the cloud industry. For instance, Google Cloud recently provides SEV feature in its cloud computing service. Customers now can setup
@@ -154,7 +155,7 @@ SEV-enabled VMs, called Confidential VMs, as its first product of Confidential C
 ================================================== -->
 <section class="featured-posts">
     <div class="section-title">
-        <h2><span>Essential Links</span></h2>
+        <h2><span>Essential Links</span> <img src="/assets/images/cipherleaklogo.png" alt="logo" style="width:3%"/>  </h2>
     </div>
     <div>
     <h3>Documents</h3>
