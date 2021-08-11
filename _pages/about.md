@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Who is behind this blog?
+title: Who is behind this website?
 permalink: /about
 comments: true
 ---

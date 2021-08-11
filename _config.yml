@@ -1,10 +1,10 @@
 # Site
 name: "CIPHERLEAKs"
 title: "CIPHERLEAKs: Ciphertext Side Channels on AMD SEV"
-description: "Cipherleaks is the first demonstrated attack against <strong>AMD SEV-SNP</strong>. It exploits a vulnerable design feature of SEV's memory encryption and uses the ciphertext of the encrypted VM Save Area (VMSA) as side channels to breach <strong>constant-time</strong> RSA and ECDSA implementation of the latest OpenSSL library."
+description: "Cipherleaks is the first demonstrated attack against AMD SEV-SNP. It exploits a vulnerable design feature of SEV's memory encryption and uses the ciphertext of the encrypted VM Save Area (VMSA) as side channels to breach constant-time RSA and ECDSA implementation of the latest OpenSSL library."
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
-baseurl: /
+baseurl: ""
 # google_analytics: 'UA-46278016-1'
 # disqus: 'demowebsite'
 # mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
